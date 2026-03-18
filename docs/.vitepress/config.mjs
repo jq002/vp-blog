@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { createSidebar } from "./sidebar.mjs"
 
 export default defineConfig({
   title: "我的博客",
@@ -10,15 +11,7 @@ export default defineConfig({
       { text: '关于', link: '/about' }
     ],
 
-    sidebar: [
-      {
-        text: '文章列表',
-        items: [
-          { text: '关于我', link: '/about' },
-          { text: '第一篇博客', link: '/first-post' }
-        ]
-      }
-    ],
+    sidebar: createSidebar(),
 
     socialLinks: [
       { icon: 'github', link: 'https://jq002.github.io/vp-blog/' }
