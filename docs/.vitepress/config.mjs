@@ -21,7 +21,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/your-username/vp-blog' }
+      { icon: 'github', link: 'https://jq002.github.io/vp-blog/' }
     ]
   }
 })

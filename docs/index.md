@@ -11,7 +11,7 @@ hero:
       link: /about
     - theme: alt
       text: 访问 GitHub
-      link: https://github.com/your-username/vp-blog
+      link: https://jq002.github.io/vp-blog/
 
 features:
   - title: 极速
