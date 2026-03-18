@@ -1,34 +1,28 @@
-# 构建 VitePress 站点并将其部署到 GitHub Pages 的工作流程
 name: Deploy VitePress site to Pages
 
 on:
-  # 监听 main 分支的 push 事件
   push:
     branches: [main]
 
-  # 允许手动触发部署
   workflow_dispatch:
 
-# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 只允许同时进行一次部署，避免并发部署导致冲突
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  # 构建工作
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 获取所有历史记录以便正确生成最后更新时间
+          fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -45,7 +39,6 @@ jobs:
         with:
           path: docs/.vitepress/dist
 
-  # 部署工作
   deploy:
     environment:
       name: github-pages
